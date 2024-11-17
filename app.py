@@ -35,24 +35,6 @@ def syllables_and_POS_main(text: str) -> dict:
 
     return {"text": text, "entities": result}
 
-syllables_and_POS_tab = gr.Interface(
-    syllables_and_POS_main,
-    [
-        gr.Textbox(
-            label="Введення",
-            info="Введіть текст для перевірки",
-            lines=3
-        )
-    ],
-    gr.HighlightedText(label="Результат"),
-    theme=gr.themes.Monochrome(),
-    flagging_mode='never',
-    title="Автоматичний складоподіл та визначення частини мови",
-    examples=[
-        ""
-    ]
-)
-
 with gr.Blocks(theme=gr.themes.Monochrome()) as app:
     gr.Markdown('# Лабораторна робота')
     gr.Markdown('Лематизація, поділ на склади та визначення частини мови слів')

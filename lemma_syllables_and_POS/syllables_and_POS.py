@@ -165,7 +165,7 @@ def get_syllables(word: str) -> str:
 
     return "-".join(syllables_list)
 
-def main(word: str) -> str:
+def get_slbls_and_POS(word: str) -> str:
     if re.findall(r"[a-zA-Z]", word):
         return "Не кириличні символи"
     elif word.isnumeric():
